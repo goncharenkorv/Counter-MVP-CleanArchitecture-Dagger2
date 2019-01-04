@@ -43,9 +43,8 @@ public class MainPresenterImpl extends AbstractPresenter implements MainPresente
     @Inject
     DecrementButtonEnabledInteractorImpl mDecrementButtonEnabledInteractorImpl;
 
-    public MainPresenterImpl(@NonNull Executor executor,
-                             @NonNull MainThread mainThread) {
-        super(executor, mainThread);
+    public MainPresenterImpl() {
+        super();
         ComponentBuilder.getPresenterComponent(null, null).inject(this);
     }
 

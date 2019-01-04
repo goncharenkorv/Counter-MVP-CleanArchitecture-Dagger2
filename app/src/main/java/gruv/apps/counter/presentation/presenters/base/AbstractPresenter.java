@@ -1,5 +1,8 @@
 package gruv.apps.counter.presentation.presenters.base;
 
+import javax.inject.Inject;
+
+import gruv.apps.counter.di.ComponentBuilder;
 import gruv.apps.counter.domain.executor.Executor;
 import gruv.apps.counter.domain.executor.MainThread;
 
@@ -10,11 +13,13 @@ import gruv.apps.counter.domain.executor.MainThread;
  * @author Goncharenko Ruslan
  */
 public abstract class AbstractPresenter {
-    protected Executor mExecutor;
-    protected MainThread mMainThread;
 
-    public AbstractPresenter(Executor executor, MainThread mainThread) {
-        mExecutor = executor;
-        mMainThread = mainThread;
+    @Inject
+    Executor mExecutor;
+    @Inject
+    MainThread mMainThread;
+
+    public AbstractPresenter() {
+        ComponentBuilder.getPresenterComponent(null, null).inject(this);
     }
 }

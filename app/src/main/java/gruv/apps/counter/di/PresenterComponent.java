@@ -4,6 +4,7 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 import gruv.apps.counter.domain.interactors.base.AbstractInteractor;
+import gruv.apps.counter.presentation.presenters.base.AbstractPresenter;
 import gruv.apps.counter.presentation.presenters.impl.MainPresenterImpl;
 import gruv.apps.counter.presentation.ui.activities.MainActivity;
 
@@ -19,6 +20,5 @@ public interface PresenterComponent {
     void inject(MainActivity mainActivity);
     void inject(AbstractInteractor abstractInteractor);
     void inject(MainPresenterImpl mainPresenterImpl);
-
-
+    void inject(AbstractPresenter abstractPresenter);
 }

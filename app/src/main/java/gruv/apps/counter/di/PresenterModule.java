@@ -45,12 +45,8 @@ public class PresenterModule {
     @Provides
     @NonNull
     @Singleton
-    MainPresenter provideMainPresenter(
-            @NonNull Executor executor,
-            @NonNull MainThread mainThread) {
-        return new MainPresenterImpl(
-                executor,
-                mainThread);
+    MainPresenter provideMainPresenter() {
+        return new MainPresenterImpl();
     }
 
     @Provides
