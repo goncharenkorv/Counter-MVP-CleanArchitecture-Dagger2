@@ -47,26 +47,10 @@ public class PresenterModule {
     @Singleton
     MainPresenter provideMainPresenter(
             @NonNull Executor executor,
-            @NonNull MainThread mainThread,
-            @NonNull CleanValueInteractorImpl cleanValueInteractorImpl,
-            @NonNull ValueSaveInteractorImpl valueSaveInteractorImpl,
-            @NonNull ValueLoadInteractorImpl valueLoadInteractorImpl,
-            @NonNull ValueIncreaserInteractorImpl valueIncreaserInteractorImpl,
-            @NonNull ValueDecreaserInteractorImpl valueDecreaserInteractorImpl,
-            @NonNull ValueUpdaterInteractorImpl valueUpdaterInteractorImpl,
-            @NonNull IncrementButtonEnabledInteractorImpl incrementButtonEnabledInteractorImpl,
-            @NonNull DecrementButtonEnabledInteractorImpl decrementButtonEnabledInteractorImpl) {
+            @NonNull MainThread mainThread) {
         return new MainPresenterImpl(
                 executor,
-                mainThread,
-                cleanValueInteractorImpl,
-                valueSaveInteractorImpl,
-                valueLoadInteractorImpl,
-                valueIncreaserInteractorImpl,
-                valueDecreaserInteractorImpl,
-                valueUpdaterInteractorImpl,
-                incrementButtonEnabledInteractorImpl,
-                decrementButtonEnabledInteractorImpl);
+                mainThread);
     }
 
     @Provides

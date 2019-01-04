@@ -3,6 +3,9 @@ package gruv.apps.counter.presentation.presenters.impl;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import javax.inject.Inject;
+
+import gruv.apps.counter.di.ComponentBuilder;
 import gruv.apps.counter.domain.executor.Executor;
 import gruv.apps.counter.domain.executor.MainThread;
 import gruv.apps.counter.domain.interactors.impl.CleanValueInteractorImpl;
@@ -23,34 +26,27 @@ import gruv.apps.counter.presentation.presenters.MainPresenter;
  */
 public class MainPresenterImpl extends AbstractPresenter implements MainPresenter {
 
-    private CleanValueInteractorImpl mCleanValueInteractorImpl;
-    private ValueSaveInteractorImpl mValueSaveInteractorImpl;
-    private ValueLoadInteractorImpl mValueLoadInteractorImpl;
-    private ValueIncreaserInteractorImpl mValueIncreaserInteractorImpl;
-    private ValueDecreaserInteractorImpl mValueDecreaserInteractorImpl;
-    private ValueUpdaterInteractorImpl mValueUpdaterInteractorImpl;
-    private IncrementButtonEnabledInteractorImpl mIncrementButtonEnabledInteractorImpl;
-    private DecrementButtonEnabledInteractorImpl mDecrementButtonEnabledInteractorImpl;
+    @Inject
+    CleanValueInteractorImpl mCleanValueInteractorImpl;
+    @Inject
+    ValueSaveInteractorImpl mValueSaveInteractorImpl;
+    @Inject
+    ValueLoadInteractorImpl mValueLoadInteractorImpl;
+    @Inject
+    ValueIncreaserInteractorImpl mValueIncreaserInteractorImpl;
+    @Inject
+    ValueDecreaserInteractorImpl mValueDecreaserInteractorImpl;
+    @Inject
+    ValueUpdaterInteractorImpl mValueUpdaterInteractorImpl;
+    @Inject
+    IncrementButtonEnabledInteractorImpl mIncrementButtonEnabledInteractorImpl;
+    @Inject
+    DecrementButtonEnabledInteractorImpl mDecrementButtonEnabledInteractorImpl;
 
     public MainPresenterImpl(@NonNull Executor executor,
-                             @NonNull MainThread mainThread,
-                             @NonNull CleanValueInteractorImpl cleanValueInteractorImpl,
-                             @NonNull ValueSaveInteractorImpl valueSaveInteractorImpl,
-                             @NonNull ValueLoadInteractorImpl valueLoadInteractorImpl,
-                             @NonNull ValueIncreaserInteractorImpl valueIncreaserInteractorImpl,
-                             @NonNull ValueDecreaserInteractorImpl valueDecreaserInteractorImpl,
-                             @NonNull ValueUpdaterInteractorImpl valueUpdaterInteractorImpl,
-                             @NonNull IncrementButtonEnabledInteractorImpl incrementButtonEnabledInteractorImpl,
-                             @NonNull DecrementButtonEnabledInteractorImpl decrementButtonEnabledInteractorImpl) {
+                             @NonNull MainThread mainThread) {
         super(executor, mainThread);
-        mCleanValueInteractorImpl = cleanValueInteractorImpl;
-        mValueSaveInteractorImpl = valueSaveInteractorImpl;
-        mValueLoadInteractorImpl = valueLoadInteractorImpl;
-        mValueIncreaserInteractorImpl = valueIncreaserInteractorImpl;
-        mValueDecreaserInteractorImpl = valueDecreaserInteractorImpl;
-        mValueUpdaterInteractorImpl = valueUpdaterInteractorImpl;
-        mIncrementButtonEnabledInteractorImpl = incrementButtonEnabledInteractorImpl;
-        mDecrementButtonEnabledInteractorImpl = decrementButtonEnabledInteractorImpl;
+        ComponentBuilder.getPresenterComponent(null, null).inject(this);
     }
 
     @Override
