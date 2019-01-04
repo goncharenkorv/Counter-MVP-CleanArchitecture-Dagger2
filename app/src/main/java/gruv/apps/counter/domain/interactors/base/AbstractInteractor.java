@@ -39,16 +39,18 @@ public abstract class AbstractInteractor implements Interactor {
     @Inject
     public Repository mRepository;
 
-    protected MainThread mMainThread;
+    @NonNull
+    @Inject
+    public MainThread mMainThread;
 
-    protected volatile boolean mIsCanceled;
-    protected volatile boolean mIsRunning;
+    private volatile boolean mIsCanceled;
+    private volatile boolean mIsRunning;
 
+    @NonNull
     @Inject
     Executor mThreadExecutor;
 
-    public AbstractInteractor(@NonNull MainThread mainThread) {
-        mMainThread = mainThread;
+    public AbstractInteractor() {
         ComponentBuilder.getPresenterComponent(null, null).inject(this);
     }
 
@@ -76,12 +78,10 @@ public abstract class AbstractInteractor implements Interactor {
     }
 
     public void execute() {
-
         // Помечаем этот интерактор как запущенный
         this.mIsRunning = true;
 
         // Запускаем интерактор в фоновом потоке
         mThreadExecutor.execute(this);
     }
-
 }

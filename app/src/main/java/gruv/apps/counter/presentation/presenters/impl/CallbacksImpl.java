@@ -2,6 +2,9 @@ package gruv.apps.counter.presentation.presenters.impl;
 
 import android.support.annotation.NonNull;
 
+import javax.inject.Inject;
+
+import gruv.apps.counter.di.ComponentBuilder;
 import gruv.apps.counter.domain.Constants;
 import gruv.apps.counter.domain.interactors.DecrementButtonEnabledInteractor;
 import gruv.apps.counter.domain.interactors.IncrementButtonEnabledInteractor;
@@ -21,14 +24,15 @@ public class CallbacksImpl implements
         DecrementButtonEnabledInteractor.Callback,
         SoundVibrateInteractor.Callback {
 
-    private MainPresenter.View mView;
+    @Inject
+    MainPresenter.View mView;
 
-    public CallbacksImpl(@NonNull MainPresenter.View view) {
-        mView = view;
+    public CallbacksImpl() {
+        ComponentBuilder.getPresenterComponent(null, null).inject(this);
     }
 
     @Override
-    public void onValueUpdate(DomainModel domainModel) {
+    public void onValueUpdate(@NonNull DomainModel domainModel) {
         mView.setValue(domainModel.getValue());
     }
 

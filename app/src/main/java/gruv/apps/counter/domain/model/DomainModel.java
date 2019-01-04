@@ -1,5 +1,6 @@
 package gruv.apps.counter.domain.model;
 
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 /**
@@ -9,14 +10,14 @@ import android.support.annotation.Nullable;
  */
 public class DomainModel {
 
-    @Nullable
+    @NonNull
     private String mValue;
 
-    public DomainModel(@Nullable String value) {
+    public DomainModel(@NonNull String value) {
         mValue = value;
     }
 
-    @Nullable
+    @NonNull
     public String getValue() {
         return mValue;
     }
@@ -34,9 +35,11 @@ public class DomainModel {
             return false;
         }
         DomainModel domainModel = (DomainModel) o;
+        /*
         if (domainModel.mValue == null) {
             return (mValue == null);
         }
+        */
         return domainModel.mValue.equals(mValue);
     }
 

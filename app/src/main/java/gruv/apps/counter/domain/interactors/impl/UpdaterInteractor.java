@@ -17,8 +17,8 @@ import gruv.apps.counter.storage.model.StorageModel;
  */
 public abstract class UpdaterInteractor extends AbstractInteractor {
 
-    public UpdaterInteractor(@NonNull MainThread mainThread) {
-        super(mainThread);
+    public UpdaterInteractor() {
+        super();
     }
 
     /**

@@ -15,8 +15,8 @@ import gruv.apps.counter.storage.model.StorageModel;
  */
 public class DecrementButtonEnabledInteractorImpl extends AbstractInteractor implements DecrementButtonEnabledInteractor {
 
-    public DecrementButtonEnabledInteractorImpl(@NonNull MainThread mainThread) {
-        super(mainThread);
+    public DecrementButtonEnabledInteractorImpl() {
+        super();
     }
 
     @Override

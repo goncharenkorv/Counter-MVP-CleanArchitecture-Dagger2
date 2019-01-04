@@ -15,9 +15,8 @@ public class ValueLoadInteractorImpl extends UpdaterInteractor implements Intera
 
     private Context mContext;
 
-    public ValueLoadInteractorImpl(@NonNull MainThread mainThread,
-                                   @NonNull Context context) {
-        super(mainThread);
+    public ValueLoadInteractorImpl(@NonNull Context context) {
+        super();
         mContext = context;
     }
 

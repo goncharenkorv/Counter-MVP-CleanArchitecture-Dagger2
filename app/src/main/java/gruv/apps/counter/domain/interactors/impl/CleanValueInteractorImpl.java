@@ -17,8 +17,8 @@ import gruv.apps.counter.storage.model.StorageModel;
 public class CleanValueInteractorImpl extends UpdaterInteractor implements Interactor {
 
     @Inject
-    public CleanValueInteractorImpl(@NonNull MainThread mainThread) {
-        super(mainThread);
+    public CleanValueInteractorImpl() {
+        super();
     }
 
     @Override

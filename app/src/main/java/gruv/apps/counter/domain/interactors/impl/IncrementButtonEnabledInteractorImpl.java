@@ -16,8 +16,8 @@ import gruv.apps.counter.storage.model.StorageModel;
  */
 public class IncrementButtonEnabledInteractorImpl extends AbstractInteractor implements IncrementButtonEnabledInteractor {
 
-    public IncrementButtonEnabledInteractorImpl(@NonNull MainThread mainThread) {
-        super(mainThread);
+    public IncrementButtonEnabledInteractorImpl() {
+        super();
     }
 
     /**

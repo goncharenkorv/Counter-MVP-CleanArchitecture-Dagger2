@@ -13,8 +13,8 @@ import gruv.apps.counter.domain.interactors.ValueUpdaterInteractor;
  */
 public class ValueUpdaterInteractorImpl extends UpdaterInteractor implements ValueUpdaterInteractor {
 
-    public ValueUpdaterInteractorImpl(@NonNull MainThread mainThread) {
-        super(mainThread);
+    public ValueUpdaterInteractorImpl() {
+        super();
     }
 
     @Override

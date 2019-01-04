@@ -16,9 +16,8 @@ public class ValueSaveInteractorImpl extends AbstractInteractor implements Inter
 
     private Context mContext;
 
-    public ValueSaveInteractorImpl(@NonNull MainThread mainThread,
-                                   @NonNull Context context) {
-        super(mainThread);
+    public ValueSaveInteractorImpl(@NonNull Context context) {
+        super();
         mContext = context;
     }
 

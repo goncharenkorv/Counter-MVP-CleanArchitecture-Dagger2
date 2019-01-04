@@ -52,75 +52,66 @@ public class PresenterModule {
     @Provides
     @NonNull
     @Singleton
-    DecrementButtonEnabledInteractorImpl provideDecrementButtonEnabledInteractorImpl(@NonNull MainThread mainThread) {
-        return new DecrementButtonEnabledInteractorImpl(
-                mainThread);
+    DecrementButtonEnabledInteractorImpl provideDecrementButtonEnabledInteractorImpl() {
+        return new DecrementButtonEnabledInteractorImpl();
     }
 
     @Provides
     @NonNull
     @Singleton
-    IncrementButtonEnabledInteractorImpl provideIncrementButtonEnabledInteractorImpl(@NonNull MainThread mainThread) {
-        return new IncrementButtonEnabledInteractorImpl(
-                mainThread);
+    IncrementButtonEnabledInteractorImpl provideIncrementButtonEnabledInteractorImpl() {
+        return new IncrementButtonEnabledInteractorImpl();
     }
 
     @Provides
     @NonNull
     @Singleton
-    ValueUpdaterInteractorImpl provideValueUpdaterInteractorImpl(@NonNull MainThread mainThread) {
-        return new ValueUpdaterInteractorImpl(
-                mainThread);
+    ValueUpdaterInteractorImpl provideValueUpdaterInteractorImpl() {
+        return new ValueUpdaterInteractorImpl();
     }
 
     @Provides
     @NonNull
     @Singleton
-    ValueDecreaserInteractorImpl provideValueDecreaserInteractorImpl(@NonNull MainThread mainThread) {
-        return new ValueDecreaserInteractorImpl(
-                mainThread);
+    ValueDecreaserInteractorImpl provideValueDecreaserInteractorImpl() {
+        return new ValueDecreaserInteractorImpl();
     }
 
     @Provides
     @NonNull
     @Singleton
-    ValueIncreaserInteractorImpl provideValueIncreaserInteractorImpl(
-            @NonNull MainThread mainThread) {
-        return new ValueIncreaserInteractorImpl(
-                mainThread);
+    ValueIncreaserInteractorImpl provideValueIncreaserInteractorImpl() {
+        return new ValueIncreaserInteractorImpl();
     }
 
     @Provides
     @NonNull
     @Singleton
-    ValueLoadInteractorImpl provideValueLoadInteractorImpl(@NonNull MainThread mainThread) {
+    ValueLoadInteractorImpl provideValueLoadInteractorImpl() {
         return new ValueLoadInteractorImpl(
-                mainThread,
                 mContext);
     }
 
     @Provides
     @NonNull
     @Singleton
-    ValueSaveInteractorImpl provideValueSaveInteractorImpl(@NonNull MainThread mainThread) {
+    ValueSaveInteractorImpl provideValueSaveInteractorImpl() {
         return new ValueSaveInteractorImpl(
-                mainThread,
                 mContext);
     }
 
     @Provides
     @NonNull
     @Singleton
-    CleanValueInteractorImpl provideCleanValueInteractorImpl(@NonNull MainThread mainThread) {
-        return new CleanValueInteractorImpl(
-                mainThread);
+    CleanValueInteractorImpl provideCleanValueInteractorImpl() {
+        return new CleanValueInteractorImpl();
     }
 
     @Provides
     @NonNull
     @Singleton
-    CallbacksImpl provideCallbacksImpl(@NonNull MainPresenter.View view) {
-        return new CallbacksImpl(view);
+    CallbacksImpl provideCallbacksImpl() {
+        return new CallbacksImpl();
     }
 
     @Provides
@@ -136,7 +127,6 @@ public class PresenterModule {
     MainPresenter.View provideView() {
         return mView;
     }
-
 
     @Provides
     @NonNull

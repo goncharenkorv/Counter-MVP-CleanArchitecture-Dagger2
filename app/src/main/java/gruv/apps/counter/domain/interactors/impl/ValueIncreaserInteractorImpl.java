@@ -15,8 +15,8 @@ import gruv.apps.counter.storage.model.StorageModel;
  */
 public class ValueIncreaserInteractorImpl extends UpdaterInteractor implements Interactor {
 
-    public ValueIncreaserInteractorImpl(@NonNull MainThread mainThread) {
-        super(mainThread);
+    public ValueIncreaserInteractorImpl() {
+        super();
     }
 
     @Override
