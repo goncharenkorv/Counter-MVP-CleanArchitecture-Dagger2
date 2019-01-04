@@ -32,16 +32,17 @@ public abstract class UpdaterInteractor extends AbstractInteractor {
         // Получим значение
         final StorageModel storageModel = mRepository.get();
 
+        //конвертируем из модели хранилища в модель для домена
+        DomainModel domainModel = StorageDomainModelConverter.convertToDomainModel(storageModel);
+
         // Мы получили наше значение, уведомим пользовательский интерфейс (UI) в главном потоке
-        postValue(storageModel);
+        postValue(domainModel);
     }
 
-    private void postValue(@NonNull final StorageModel storageModel) {
+    private void postValue(@NonNull final DomainModel domainModel) {
         mMainThread.post(new Runnable() {
             @Override
             public void run() {
-                //конвертируем из модели хранилища в модель для домена
-                DomainModel domainModel = StorageDomainModelConverter.convertToDomainModel(storageModel);
                 mCallbacksImpl.onValueUpdate(domainModel);
             }
         });
